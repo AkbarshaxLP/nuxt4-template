@@ -1,0 +1,3 @@
+<template>
+  <views-login />
+</template>
