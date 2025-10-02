@@ -19,7 +19,7 @@
       </Breadcrumb>
     </div>
     <div>
-      <AppSidebarNavUser :user="user" />
+      <AppHeaderNavUser :user="user" />
     </div>
   </header>
 </template>

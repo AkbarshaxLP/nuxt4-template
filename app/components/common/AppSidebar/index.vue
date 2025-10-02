@@ -45,7 +45,7 @@ const props = withDefaults(defineProps<SidebarProps>(), {
       <NavMain :items="data.navMain" />
     </SidebarContent>
     <!-- <SidebarFooter>
-      <AppSidebarNavUser :user="data.user" />
+      <AppHeaderNavUser :user="data.user" />
     </SidebarFooter> -->
     <SidebarRail />
   </Sidebar>
