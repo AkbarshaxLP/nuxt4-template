@@ -1,16 +1,6 @@
 <template>
   <div>
-    index-page
-
-    <div class="flex gap-3 text-primary">
-      <button type="button" @click="persistStore.decrement(1)">-</button>
-      {{ persistStore.count }}
-      <button type="button" @click="persistStore.increment(1)">+</button>
-    </div>
-
+    <h1 class="text-2xl text-center bg-slate-200 py-2">this is index page</h1>
+    <NuxtLink class="block text-center underline" to="/example">to example Page</NuxtLink>
   </div>
 </template>
-
-<script lang="ts" setup>
-const persistStore = usePersistStore()
-</script>
