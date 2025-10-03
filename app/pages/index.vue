@@ -1,3 +1,3 @@
 <template>
-  <views-index />
+  <views />
 </template>

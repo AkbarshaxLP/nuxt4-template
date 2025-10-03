@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { LogOut } from 'lucide-vue-next'
+// import { LogOut } from 'lucide-vue-next'
+
+const persistStore  = usePersistStore();
+
+function logout () {
+  persistStore.logout()
+}
 
 defineProps<{
   user: {
@@ -40,10 +46,14 @@ defineProps<{
         </div>
       </DropdownMenuLabel>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        <LogOut />
+      <DropdownMenuItem @click="logout" class="btn">
+        <Icon name="lucide:log-out" />
         Выйти
       </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
+
+<script lang="ts" setup>
+
+</script>

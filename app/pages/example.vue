@@ -14,7 +14,7 @@
           <Input v-model="basicForm.password" type="password" placeholder="Password (min 8 chars)" />
           <p v-if="basicErrors.password" class="text-red-500 text-sm mt-1">{{ basicErrors.password }}</p>
         </div>
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
     </div>
 
@@ -38,7 +38,7 @@
           <Input v-model="userForm.address.zipCode" type="text" placeholder="Zip Code" />
           <p v-if="userErrors.zipCode" class="text-red-500 text-sm mt-1">{{ userErrors.zipCode }}</p>
         </div>
-        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Submit User</button>
+        <Button type="submit" variant="default">Submit User</Button>
       </form>
     </div>
 
@@ -49,27 +49,27 @@
         <div v-for="(tag, index) in arrayForm.tags" :key="index" class="flex gap-2">
           <Input v-model="arrayForm.tags[index]" type="text" placeholder="Tag (min 2 chars)"
             class="border px-3 py-2 rounded flex-1" />
-          <button type="button" @click="removeTag(index)" class="bg-red-500 text-white px-3 py-2 rounded">
+          <Button type="button" @click="removeTag(index)" variant="destructive">
             Remove
-          </button>
+          </Button>
         </div>
-        <button type="button" @click="addTag" class="bg-gray-500 text-white px-4 py-2 rounded">
+        <Button type="button" @click="addTag" variant="secondary">
           Add Tag
-        </button>
+        </Button>
         <p v-if="arrayErrors.tags" class="text-red-500 text-sm">{{ arrayErrors.tags }}</p>
-        <button type="button" @click="handleArrayForm" class="bg-purple-500 text-white px-4 py-2 rounded">
+        <Button type="button" @click="handleArrayForm" variant="default">
           Validate Array
-        </button>
+        </Button>
       </div>
     </div>
 
     <!-- Example 4: Store Counter -->
     <div class="mb-8 p-4 border rounded">
       <h2 class="text-xl font-semibold mb-4">4. Persist Store Example</h2>
-      <div class="flex gap-3 text-secondary mobile:text-primary text-2xl justify-center bg-slate-200 py-2">
-        <button type="button" @click="persistStore.decrement(1)">-</button>
-        {{ persistStore.count }}
-        <button type="button" @click="persistStore.increment(1)">+</button>
+      <div class="flex gap-3 items-center text-2xl justify-center bg-slate-200 py-2">
+        <Button type="button" @click="persistStore.decrement(1)" variant="outline" size="icon">-</Button>
+        <span class="text-secondary mobile:text-primary">{{ persistStore.count }}</span>
+        <Button type="button" @click="persistStore.increment(1)" variant="outline" size="icon">+</Button>
       </div>
     </div>
 

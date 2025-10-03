@@ -12,5 +12,9 @@ export const usePersistStore = defineStore('persist', {
     decrement(payload: number = 1) {
       this.count -= payload
     },
+    logout () {
+      const router = useRouter();
+      router.push('/login')
+    }
   },
 })
