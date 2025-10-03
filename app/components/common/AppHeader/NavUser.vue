@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import {
-  SidebarMenuButton,
+  // SidebarMenuButton,
   useSidebar,
 } from '@/components/ui/sidebar'
 

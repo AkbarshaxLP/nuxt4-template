@@ -9,7 +9,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton
@@ -47,6 +46,5 @@ const props = withDefaults(defineProps<SidebarProps>(), {
     <!-- <SidebarFooter>
       <AppHeaderNavUser :user="data.user" />
     </SidebarFooter> -->
-    <SidebarRail />
   </Sidebar>
 </template>
