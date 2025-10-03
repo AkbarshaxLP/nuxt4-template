@@ -1,21 +1,3 @@
-<script setup lang="ts">
-// import { LogOut } from 'lucide-vue-next'
-
-const persistStore  = usePersistStore();
-
-function logout () {
-  persistStore.logout()
-}
-
-defineProps<{
-  user: {
-    name: string
-    email: string
-    avatar: string
-  }
-}>()
-</script>
-
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
@@ -37,7 +19,9 @@ defineProps<{
         <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
           <Avatar class="h-8 w-8 rounded-lg">
             <AvatarImage :src="user.avatar" :alt="user.name" />
-            <AvatarFallback class="rounded-lg">{{ user?.name?.slice(0, 2).toUpperCase() }}</AvatarFallback>
+            <AvatarFallback class="rounded-lg">
+              {{ user?.name?.slice(0, 2).toUpperCase() }}
+            </AvatarFallback>
           </Avatar>
           <div class="grid flex-1 text-left text-sm leading-tight">
             <span class="truncate font-semibold">{{ user.name }}</span>
@@ -46,7 +30,7 @@ defineProps<{
         </div>
       </DropdownMenuLabel>
       <DropdownMenuSeparator />
-      <DropdownMenuItem @click="logout" class="btn">
+      <DropdownMenuItem class="btn" @click="logout">
         <Icon name="lucide:log-out" />
         Выйти
       </DropdownMenuItem>
@@ -54,6 +38,18 @@ defineProps<{
   </DropdownMenu>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
+const persistStore = usePersistStore()
 
+function logout() {
+  persistStore.logout()
+}
+
+defineProps<{
+  user: {
+    name: string
+    email: string
+    avatar: string
+  }
+}>()
 </script>

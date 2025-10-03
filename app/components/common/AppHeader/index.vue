@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-
 const user = {
   name: 'Akbar',
   email: 'akbarshax.lp@gmail.com',

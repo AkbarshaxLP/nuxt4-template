@@ -5,14 +5,20 @@
     <!-- Example 1: Basic Form Validation -->
     <div class="mb-8 p-4 border rounded">
       <h2 class="text-xl font-semibold mb-4">1. Basic Form Validation</h2>
-      <form @submit.prevent="handleBasicForm" class="space-y-3">
+      <form class="space-y-3" @submit.prevent="handleBasicForm">
         <div>
           <Input v-model="basicForm.email" type="text" placeholder="Email" />
           <p v-if="basicErrors.email" class="text-red-500 text-sm mt-1">{{ basicErrors.email }}</p>
         </div>
         <div>
-          <Input v-model="basicForm.password" type="password" placeholder="Password (min 8 chars)" />
-          <p v-if="basicErrors.password" class="text-red-500 text-sm mt-1">{{ basicErrors.password }}</p>
+          <Input
+            v-model="basicForm.password"
+            type="password"
+            placeholder="Password (min 8 chars)"
+          />
+          <p v-if="basicErrors.password" class="text-red-500 text-sm mt-1">
+            {{ basicErrors.password }}
+          </p>
         </div>
         <Button type="submit">Submit</Button>
       </form>
@@ -21,7 +27,7 @@
     <!-- Example 2: Nested Object Validation -->
     <div class="mb-8 p-4 border rounded">
       <h2 class="text-xl font-semibold mb-4">2. Nested Object Validation</h2>
-      <form @submit.prevent="handleUserForm" class="space-y-3">
+      <form class="space-y-3" @submit.prevent="handleUserForm">
         <div>
           <Input v-model="userForm.name" type="text" placeholder="Name" />
           <p v-if="userErrors.name" class="text-red-500 text-sm mt-1">{{ userErrors.name }}</p>
@@ -36,7 +42,9 @@
         </div>
         <div>
           <Input v-model="userForm.address.zipCode" type="text" placeholder="Zip Code" />
-          <p v-if="userErrors.zipCode" class="text-red-500 text-sm mt-1">{{ userErrors.zipCode }}</p>
+          <p v-if="userErrors.zipCode" class="text-red-500 text-sm mt-1">
+            {{ userErrors.zipCode }}
+          </p>
         </div>
         <Button type="submit" variant="default">Submit User</Button>
       </form>
@@ -47,19 +55,17 @@
       <h2 class="text-xl font-semibold mb-4">3. Array Validation</h2>
       <div class="space-y-3">
         <div v-for="(tag, index) in arrayForm.tags" :key="index" class="flex gap-2">
-          <Input v-model="arrayForm.tags[index]" type="text" placeholder="Tag (min 2 chars)"
-            class="border px-3 py-2 rounded flex-1" />
-          <Button type="button" @click="removeTag(index)" variant="destructive">
-            Remove
-          </Button>
+          <Input
+            v-model="arrayForm.tags[index]"
+            type="text"
+            placeholder="Tag (min 2 chars)"
+            class="border px-3 py-2 rounded flex-1"
+          />
+          <Button type="button" variant="destructive" @click="removeTag(index)">Remove</Button>
         </div>
-        <Button type="button" @click="addTag" variant="secondary">
-          Add Tag
-        </Button>
+        <Button type="button" variant="secondary" @click="addTag">Add Tag</Button>
         <p v-if="arrayErrors.tags" class="text-red-500 text-sm">{{ arrayErrors.tags }}</p>
-        <Button type="button" @click="handleArrayForm" variant="default">
-          Validate Array
-        </Button>
+        <Button type="button" variant="default" @click="handleArrayForm">Validate Array</Button>
       </div>
     </div>
 
@@ -67,9 +73,13 @@
     <div class="mb-8 p-4 border rounded">
       <h2 class="text-xl font-semibold mb-4">4. Persist Store Example</h2>
       <div class="flex gap-3 items-center text-2xl justify-center bg-slate-200 py-2">
-        <Button type="button" @click="persistStore.decrement(1)" variant="outline" size="icon">-</Button>
+        <Button type="button" variant="outline" size="icon" @click="persistStore.decrement(1)">
+          -
+        </Button>
         <span class="text-secondary mobile:text-primary">{{ persistStore.count }}</span>
-        <Button type="button" @click="persistStore.increment(1)" variant="outline" size="icon">+</Button>
+        <Button type="button" variant="outline" size="icon" @click="persistStore.increment(1)">
+          +
+        </Button>
       </div>
     </div>
 
@@ -147,9 +157,8 @@ const handleUserForm = () => {
 
   const result = userSchema.safeParse(userForm)
   if (!result.success) {
-
     // error keys
-    console.log(result.error.issues.map(resp => resp.path.join('.')));
+    console.log(result.error.issues.map((resp) => resp.path.join('.')))
 
     result.error.issues.forEach((issue) => {
       const path = issue.path.join('.')
@@ -166,7 +175,9 @@ const handleUserForm = () => {
 
 // Example 3: Array Schema
 const arraySchema = z.object({
-  tags: z.array(z.string().min(2, 'Each tag must be at least 2 characters')).min(1, 'At least one tag is required'),
+  tags: z
+    .array(z.string().min(2, 'Each tag must be at least 2 characters'))
+    .min(1, 'At least one tag is required'),
 })
 
 const arrayForm = reactive({
@@ -190,7 +201,7 @@ const handleArrayForm = () => {
 
   const result = arraySchema.safeParse(arrayForm)
   if (!result.success) {
-    arrayErrors.tags = result.error.issues.map(i => i.message).join(', ')
+    arrayErrors.tags = result.error.issues.map((i) => i.message).join(', ')
   } else {
     alert('Array form is valid! ✅')
     console.log('Valid tags:', result.data)
