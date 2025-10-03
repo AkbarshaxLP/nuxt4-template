@@ -1,42 +1,36 @@
-import {
-  BookOpen,
-  Bot,
-  Settings2,
-  SquareTerminal,
-  Command
-} from "lucide-vue-next"
+import { BookOpen, Bot, Settings2, SquareTerminal, Command } from 'lucide-vue-next'
 
 export const options = {
   head: {
     title: 'Uninetworks',
     description: '',
-    logo: Command
+    logo: Command,
   },
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: 'shadcn',
+    email: 'm@example.com',
+    avatar: '/avatars/shadcn.jpg',
   },
   navMain: [
     {
-      title: "Дашборд",
-      url: "#",
+      title: 'Дашборд',
+      url: '#',
       icon: SquareTerminal,
       isActive: true,
     },
     {
-      title: "Список",
-      url: "#",
+      title: 'Список',
+      url: '#',
       icon: Bot,
     },
     {
-      title: "Пользователи",
-      url: "#",
+      title: 'Пользователи',
+      url: '#',
       icon: BookOpen,
     },
     {
-      title: "Отчеты",
-      url: "#",
+      title: 'Отчеты',
+      url: '#',
       icon: Settings2,
     },
   ],

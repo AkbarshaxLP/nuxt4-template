@@ -1,23 +1,21 @@
 <script setup lang="ts">
 import type { SidebarProps } from '@/components/ui/sidebar'
-import { options as data } from './options';
+import { options as data } from './options'
 
 import NavMain from '~/components/common/AppSidebar/NavMain.vue'
 
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuItem,
-  SidebarMenuButton
+  SidebarMenuButton,
 } from '@/components/ui/sidebar'
 
 const props = withDefaults(defineProps<SidebarProps>(), {
-  collapsible: "icon",
+  collapsible: 'icon',
 })
-
 </script>
 
 <template>
@@ -43,8 +41,5 @@ const props = withDefaults(defineProps<SidebarProps>(), {
     <SidebarContent>
       <NavMain :items="data.navMain" />
     </SidebarContent>
-    <!-- <SidebarFooter>
-      <AppHeaderNavUser :user="data.user" />
-    </SidebarFooter> -->
   </Sidebar>
 </template>

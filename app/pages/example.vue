@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="flex gap-3 text-secondary mobile:text-primary text-2xl justify-center bg-slate-200 py-2 ">
+    <div
+      class="flex gap-3 text-secondary mobile:text-primary text-2xl justify-center bg-slate-200 py-2"
+    >
       <button type="button" @click="persistStore.decrement(1)">-</button>
       {{ persistStore.count }}
       <button type="button" @click="persistStore.increment(1)">+</button>
@@ -12,5 +14,4 @@
 
 <script lang="ts" setup>
 const persistStore = usePersistStore()
-
 </script>

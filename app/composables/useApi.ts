@@ -12,6 +12,6 @@ export default function useApi<T>(url: string, options = {}) {
     // headers: {
     //   'Authorization': `Bearer {access_token}`
     // },
-    ...options
+    ...options,
   })
 }

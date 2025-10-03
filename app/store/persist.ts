@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const usePersistStore = defineStore('persist', {
   persist: true,
@@ -6,11 +6,11 @@ export const usePersistStore = defineStore('persist', {
     count: 0,
   }),
   actions: {
-    increment (payload: number = 1) {
-      this.count += payload;
+    increment(payload: number = 1) {
+      this.count += payload
     },
-    decrement (payload: number = 1) {
-      this.count -= payload;
-    }
+    decrement(payload: number = 1) {
+      this.count -= payload
+    },
   },
-});
+})

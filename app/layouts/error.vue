@@ -6,9 +6,7 @@
     <p class="text-xl mt-4">
       {{ error.message || 'Page Not Found' }}
     </p>
-    <NuxtLink to="/" class="mt-6 text-blue-500 underline">
-      Go back home 123
-    </NuxtLink>
+    <NuxtLink to="/" class="mt-6 text-blue-500 underline">Go back home 123</NuxtLink>
   </div>
 </template>
 
@@ -16,7 +14,7 @@
 defineProps({
   error: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 })
 </script>

@@ -3,10 +3,10 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'mobile': { max: "639px" }, // До 639px → мобильные
-        'tablet': { min: "640px", max: "1024px" }, // 640px - 1024px → планшеты
-        'to-tablet': { max: "1024px" },
-        'desktop': "1025px", // 1025px и выше → десктоп
+        mobile: { max: '639px' }, // До 639px → мобильные
+        tablet: { min: '640px', max: '1024px' }, // 640px - 1024px → планшеты
+        'to-tablet': { max: '1024px' },
+        desktop: '1025px', // 1025px и выше → десктоп
       },
 
       lineClamp: {
@@ -28,7 +28,6 @@ module.exports = {
           xl: '1256px', // На очень больших экранах контейнер ограничен 1280px
         },
       },
-
     },
   },
   plugins: [],

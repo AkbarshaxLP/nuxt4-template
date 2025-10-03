@@ -1,15 +1,14 @@
 <template>
   <header
-    class="flex px-4 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 border-b">
+    class="flex px-4 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 border-b"
+  >
     <div class="flex items-center gap-2 flex-1">
       <SidebarTrigger class="-ml-1" />
       <Separator orientation="vertical" class="mr-2 h-4" />
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem class="hidden md:block">
-            <BreadcrumbLink href="#">
-              Админ панель
-            </BreadcrumbLink>
+            <BreadcrumbLink href="#">Админ панель</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator class="hidden md:block" />
           <BreadcrumbItem>
@@ -32,15 +31,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
-import {
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/breadcrumb'
+import { Separator } from '@/components/ui/separator'
+import { SidebarTrigger } from '@/components/ui/sidebar'
 
 const user = {
-  name: "Akbar",
-  email: "akbarshax.lp@gmail.com",
-  avatar: "/avatars/shadcn.jpg",
+  name: 'Akbar',
+  email: 'akbarshax.lp@gmail.com',
+  avatar: '/avatars/shadcn.jpg',
 }
 </script>

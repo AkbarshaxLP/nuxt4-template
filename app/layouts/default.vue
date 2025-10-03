@@ -1,6 +1,6 @@
 <template>
   <SidebarProvider>
-    <AppSidebar variant="sidebar"/>
+    <AppSidebar variant="sidebar" />
     <SidebarInset>
       <AppHeader />
       <div class="flex flex-1 flex-col gap-4 p-4 pt-0">
@@ -11,9 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import AppSidebar from "~/components/common/AppSidebar/index.vue"
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/ui/sidebar"
+import AppSidebar from '~/components/common/AppSidebar/index.vue'
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 </script>
