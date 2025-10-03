@@ -4,15 +4,6 @@ import { options as data } from './options'
 
 import NavMain from '~/components/common/AppSidebar/NavMain.vue'
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-} from '@/components/ui/sidebar'
-
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: 'icon',
 })

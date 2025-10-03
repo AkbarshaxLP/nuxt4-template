@@ -29,6 +29,10 @@ export default defineNuxtConfig({
         path: '~/components/common',
         pathPrefix: true,
       },
+      {
+        path: '~/components/ui',
+        pathPrefix: true,
+      },
     ],
   },
   shadcn: {
